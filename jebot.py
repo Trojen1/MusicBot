@@ -119,8 +119,8 @@ async def song(client, message):
         lol = "./R.png"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
-                 duration=["duration"],
-                 title=["title"],
+                 duration=int(rip_data["duration"]),
+                 title=str(rip_data["title"]),
                  performer=str(rip_data["uploader"]),
                  thumb=lol,
                  caption=cap)  #JEBotZ
@@ -205,8 +205,8 @@ async def song(client, message):
         lol = "./R.png"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
-                 duration=["duration"],
-                 title=["title"],
+                 duration=int(rip_data["duration"]),
+                 title=str(rip_data["title"]),
                  performer=str(rip_data["uploader"]),
                  thumb=lol,
                  caption=cap)  #JEBotZ
