@@ -45,9 +45,9 @@ Jebot = Client(
 @Jebot.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))
 async def song(client, message):
  #ImJanindu #JEBotZ
-    cap = """🤩Requested by :{message.from_user.mention}
-    🥰Downloaded Via: Youtube
-    🤗Downloaded By : @itchikacutiebot"""
+    cap = """
+    🥰 Downloaded Via: Youtube
+    🤗 Downloaded By : @itchikacutiebot"""
     url = message.text
     rkp = await message.reply("Processing...")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
@@ -57,7 +57,7 @@ async def song(client, message):
     try:
         url = q[0]["link"]
     except BaseException:
-        return await rkp.edit("Failed to find that song.")
+        return await rkp.edit("I can't find that song.")
     type = "audio"
     if type == "audio":
         opts = {
@@ -119,8 +119,8 @@ async def song(client, message):
         lol = "./R.png"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
-                 duration=int(rip_data["duration"]),
-                 title=str(rip_data["title"]),
+                 duration=["duration"]),
+                 title=["title"]),
                  performer=str(rip_data["uploader"]),
                  thumb=lol,
                  caption=cap)  #JEBotZ
@@ -129,7 +129,7 @@ async def song(client, message):
     
 @Jebot.on_message(filters.command("track") & ~filters.edited & filters.group)
 async def song(client, message):
-    cap = """🤩Requested by :{username}
+    cap = """
     🥰Downloaded Via: Youtube
     🤗Downloaded By : @itchikacutiebot"""
     url = message.text.split(None, 1)[1]
@@ -143,7 +143,7 @@ async def song(client, message):
     try:
         url = q[0]["link"]
     except BaseException:
-        return await rkp.edit("Failed to find that song.")
+        return await rkp.edit("I can't find that song.")
     type = "audio"
     if type == "audio":
         opts = {
@@ -205,8 +205,8 @@ async def song(client, message):
         lol = "./R.png"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
-                 duration=int(rip_data["duration"]),
-                 title=str(rip_data["title"]),
+                 duration=["duration"]),
+                 title=str=["title"]),
                  performer=str(rip_data["uploader"]),
                  thumb=lol,
                  caption=cap)  #JEBotZ
