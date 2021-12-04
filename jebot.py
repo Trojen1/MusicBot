@@ -39,14 +39,13 @@ Jebot = Client(
    bot_token=Config.TG_BOT_TOKEN,
 )
 
-
  #For private messages        
  #Ignore commands
  #No bots also allowed
 @Jebot.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))
 async def song(client, message):
  #ImJanindu #JEBotZ
-    cap = """🤩Requested by :{username}
+    cap = """🤩Requested by :{message.from_user.mention}
     🥰Downloaded Via: Youtube
     🤗Downloaded By : @itchikacutiebot"""
     url = message.text
