@@ -219,7 +219,7 @@ async def start(client, message):
    if message.chat.type == 'private':
        await Jebot.send_message(
                chat_id=message.chat.id,
-               text=""""""        
+               text="""""",        
             disable_web_page_preview=True,        
             parse_mode="html",
             reply_to_message_id=message.message_id
